@@ -4,7 +4,6 @@
 #####################
 
 library(data.table)
-library(xlsx)
 library(XML)
 setwd("C:/Users/brand/Documents/PSS_Survey/")
 
@@ -35,7 +34,7 @@ for(r in 1:(length(blanks)-1)){
   if(r != length(blanks)-1) {temp <- temp[1:(nrow(temp)-1)]} 
   #R friendly column names
   names(temp) <- c("job_family", "uw_job_codes_2019", "title", 
-                   "uw_ees_2019", "uw-market_50th_tcc_2019", "job_category")
+                   "uw_ees_2019", "uw_market_50th_tcc_2019", "job_category")
   t4new <- rbind(t4new,temp,fill=T)
 }
 titles19 <- copy(t4new)
@@ -68,7 +67,7 @@ for(r in 1:(length(blanks)-1)){
   if(r != length(blanks)-1) {temp <- temp[1:(nrow(temp)-1)]} 
   #R friendly column names
   names(temp) <- c("job_family", "uw_job_codes_2017", "title", 
-                   "uw_ees_2017", "uw-market_50th_tcc_2017", "job_category")
+                   "uw_ees_2017", "uw_market_50th_tcc_2017", "job_category")
   t4new <- rbind(t4new,temp,fill=T)
 }
 titles17 <- copy(t4new)
