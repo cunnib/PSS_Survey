@@ -73,7 +73,11 @@ for(r in 1:(length(blanks)-1)){
 titles17 <- copy(t4new)
 comparison <- merge(titles17, titles19, by = c("title", "job_category", 
                                                "job_family"), all=T)
+comparison$title <- gsub("-", "-", comp$title)
 fwrite(comparison, paste0("data/comparison_17_19.csv"))
 fwrite(t5, paste0("data/comparison_categories.csv"))
+
+
+
                     
                     
