@@ -9,6 +9,7 @@ library(ggplot2)
 setwd("C:/Users/brand/Documents/PSS_Survey/")
 
 comp <- fread(paste0("data/comparison_17_19.csv"))
+comp$title <- gsub("â???", "-", comp$title)
 
 comp$uw_market_50th_tcc_2017 <- gsub("-", "-", comp$uw_market_50th_tcc_2017)
 comp$uw_market_50th_tcc_2019 <- gsub("-", "-", comp$uw_market_50th_tcc_2019)
@@ -79,4 +80,3 @@ ggplot(categories, aes(category, value)) +
   guides(fill=guide_legend(title="Survey Year")) + theme_bw() + 
   #geom_text(aes(label=value, fill=variable), vjust=0) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())
-
